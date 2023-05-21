@@ -14,6 +14,17 @@
     <TextView
         android:id="@+id/detailNamaBarang"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Nama"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/detailKodeBarang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Kode Barang"
+        android:textStyle="bold"/>
 
 </LinearLayout>
