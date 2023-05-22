@@ -33,11 +33,11 @@
         android:inputType="text"
         android:layout_below="@+id/kodebarang"/>
     <Button
-        android:id="@+id/btnsimpan"
+        android:id="@+id/btnedit"
         android:layout_below="@+id/kode"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="SIMPAN"/>
+        android:text="EDIT"/>
 </RelativeLayout>

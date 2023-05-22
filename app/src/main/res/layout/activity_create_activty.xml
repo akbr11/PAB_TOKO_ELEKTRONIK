@@ -11,6 +11,7 @@
     tools:context=".CreateActivty">
     
     <TextView
+        android:id="@+id/nama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Barang"/>
@@ -21,20 +22,20 @@
         android:inputType="text"
         android:layout_marginTop="16dp"/>
     <TextView
-        android:id="@+id/kodebarang"
+        android:id="@+id/kode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/namabarang"
         android:text="Kode Barang"/>
     <EditText
-        android:id="@+id/kode"
+        android:id="@+id/kodebarang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:layout_below="@+id/kodebarang"/>
+        android:layout_below="@+id/kode"/>
     <Button
         android:id="@+id/btnsimpan"
-        android:layout_below="@+id/kode"
+        android:layout_below="@+id/kodebarang"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
