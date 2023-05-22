@@ -27,8 +27,8 @@ public class DetailActivity extends AppCompatActivity {
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
             cursor.moveToPosition(0);
-            namabarang.setText(cursor.getString(0).toString());
-            kodebarang.setText(cursor.getString(1).toString());
+            namabarang.setText(cursor.getString(0));
+            kodebarang.setText(cursor.getString(1));
         }
     }
 }

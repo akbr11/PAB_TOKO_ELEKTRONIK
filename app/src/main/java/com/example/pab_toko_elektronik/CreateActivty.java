@@ -26,13 +26,22 @@ public class CreateActivty extends AppCompatActivity {
         btnsimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SQLiteDatabase db = dataHelper.getWritableDatabase();
-                db.execSQL("INSERT INTO barang(namaBarang, kodeBarang) values('" +
-                        namabarang.getText().toString() + "', '" +
-                        kodebarang.getText().toString() + "')");
-                Toast.makeText(CreateActivty.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
-                MainActivity.ma.RefreshList();
-                finish();
+                String namaBarang = namabarang.getText().toString();
+                String kodeBarang = kodebarang.getText().toString();
+
+                if (namaBarang.equals("")) {
+                    namabarang.setError("Nama barang harus diisi!");
+                } else if(kodeBarang.equals("")){
+                    kodebarang.setError("Kode barang harus diisi!");
+                } else {
+                    SQLiteDatabase db = dataHelper.getWritableDatabase();
+                    db.execSQL("INSERT INTO barang(namaBarang, kodeBarang) values('" +
+                            namabarang.getText().toString() + "', '" +
+                            kodebarang.getText().toString() + "')");
+                    Toast.makeText(CreateActivty.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
+                    MainActivity.ma.RefreshList();
+                    finish();
+                }
             }
         });
     }

@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         cursor.moveToFirst();
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
-            daftar[i] = cursor.getString(0).toString();
+            daftar[i] = cursor.getString(0);
         }
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
@@ -79,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
                             case 2:
                                 SQLiteDatabase db = dataHelper.getWritableDatabase();
                                 db.execSQL("DELETE FROM barang WHERE namaBarang = '" + selection + "'");
+                                Toast.makeText(MainActivity.this, "Data Berhasil Dihapus", Toast.LENGTH_SHORT).show();
+                                RefreshList();
+                                break;
                         }
                     }
                 });
