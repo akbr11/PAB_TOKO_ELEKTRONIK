@@ -38,6 +38,7 @@
         android:padding="15dp"
         android:inputType="textEmailAddress"
         android:layout_above="@id/et_password"
+        android:textColorHint="@color/black"
         android:textSize="15sp"
         android:background="@drawable/et_custom"/>
 
@@ -53,14 +54,15 @@
         android:inputType="textPassword"
         android:layout_centerInParent="true"
         android:textSize="15sp"
-        android:background="@drawable/et_custom"/>
+        android:background="@drawable/et_custom"
+        android:textColorHint="@color/black"/>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@id/et_password"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="@color/blue"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
