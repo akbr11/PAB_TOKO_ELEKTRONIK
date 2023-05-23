@@ -103,14 +103,20 @@
                     android:text="Mau beli apa nih ?"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/myBarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat Barangmu"
+                    android:backgroundTint="@color/white"
+                    android:padding="10dp"/>
             </LinearLayout>
-            <Button
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:text="Tambah"
-                android:textColor="@color/black"/>
+            <ImageView
+                android:layout_width="144dp"
+                android:layout_height="match_parent"
+                android:rotation="15"
+                android:src="@drawable/baseline_phonelink_setup_24"/>
+
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -127,25 +133,14 @@
             android:textColor="@color/black"/>
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/allProduct"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="10dp">
-        <TextView
-            android:id="@+id/barang"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="20dp"
-            android:text="Barang"/>
-
-        <Button
-            android:id="@+id/lihat"
+        <ListView
+            android:id="@+id/listView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textSize="10sp"
-            android:text="Beli"/>
+            android:layout_alignParentRight="true">
+        </ListView>
     </LinearLayout>
 </LinearLayout>
