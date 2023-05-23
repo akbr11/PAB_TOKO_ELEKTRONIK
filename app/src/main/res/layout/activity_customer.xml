@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".CustomerActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -93,14 +93,14 @@
                     android:textStyle="bold"
                     android:textColor="#ffffff"
                     android:textSize="22dp"
-                    android:text="Hallo ..."
+                    android:text="Hallo Winda .."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:layout_marginTop="10dp"
                     android:textSize="15dp"
                     android:textColor="#ffffff"
-                    android:text="Mau ngerjain apa nih ?"
+                    android:text="Mau beli apa nih ?"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -121,20 +121,31 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="List Barang :"
+            android:text="Lihat Barang disini .."
             android:textStyle="bold"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textColor="@color/black"/>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/allProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/barang"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true">
-        </ListView>
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:text="Barang"/>
+
+        <Button
+            android:id="@+id/lihat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textSize="10sp"
+            android:text="Beli"/>
     </LinearLayout>
 </LinearLayout>

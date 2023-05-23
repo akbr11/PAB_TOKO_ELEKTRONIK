@@ -1,44 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    android:paddingRight="16dp"
-    android:paddingLeft="16dp"
+    android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".CreateActivty">
-    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/blue">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/back"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/back" />
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2">
+                <LinearLayout
+                    android:id="@+id/icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="144dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="8dp"
+                        android:adjustViewBounds="true"
+                        android:text="Toko Elektronik"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
     <TextView
-        android:id="@+id/nama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nama Barang"/>
-    <EditText
-        android:id="@+id/namabarang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_marginTop="16dp"/>
-    <TextView
-        android:id="@+id/kode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/namabarang"
-        android:text="Kode Barang"/>
-    <EditText
-        android:id="@+id/kodebarang"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:text="Tambah Barang"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"/>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_below="@+id/kode"/>
-    <Button
-        android:id="@+id/btnsimpan"
-        android:layout_below="@+id/kodebarang"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/design_default_color_secondary"
-        android:text="SIMPAN"/>
-</RelativeLayout>
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Barang"/>
+        <EditText
+            android:id="@+id/namabarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+        <TextView
+            android:id="@+id/kode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/namabarang"
+            android:text="Kode Barang"/>
+        <EditText
+            android:id="@+id/kodebarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_below="@+id/kode"/>
+        <TextView
+            android:id="@+id/stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kodebarang"
+            android:text="Stock Barang"/>
+        <EditText
+            android:id="@+id/stockbarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_below="@+id/stock"/>
+        <TextView
+            android:id="@+id/harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stockbarang"
+            android:text="Harga Barang"/>
+        <EditText
+            android:id="@+id/hargabarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_below="@+id/harga"/>
+        <Button
+            android:id="@+id/btnsimpan"
+            android:layout_below="@+id/hargabarang"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/white"
+            android:text="SIMPAN"/>
+    </LinearLayout>
+</LinearLayout>

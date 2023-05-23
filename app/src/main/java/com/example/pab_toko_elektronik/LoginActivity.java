@@ -32,6 +32,10 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Login berhasil", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
+                } else if (email.equals("winda") && password.equals("winda")) {
+                    Toast.makeText(getApplicationContext(), "Login berhasil", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), CustomerActivity.class);
+                    startActivity(intent);
                 } else if (email.equals("")) {
                     l_email.setError("Email harus diisi!");
                 } else if (password.equals("")) {
