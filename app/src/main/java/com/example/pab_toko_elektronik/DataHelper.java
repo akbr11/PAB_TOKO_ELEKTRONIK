@@ -13,11 +13,17 @@ public class DataHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    private static final String tabel_barang = "create table barang(" +
+            "idBarang integer primary key autoincrement, " +
+            "namaBarang text null, " +
+            "kodeBarang text null, " +
+            "stokBarang integer null, " +
+            "hargaBarang integer null);";
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "create table barang(namaBarang text null, kodeBarang text null, stokBarang integer null, hargaBarang integer null);";
-        Log.d("Data", "onCreate: " + sql);
-        db.execSQL(sql);
+//        String sql = "create table barang(namaBarang text null, kodeBarang text null, stokBarang integer null, hargaBarang integer null);";
+        Log.d("Data", "onCreate: " + tabel_barang);
+        db.execSQL(tabel_barang);
     }
 
     @Override

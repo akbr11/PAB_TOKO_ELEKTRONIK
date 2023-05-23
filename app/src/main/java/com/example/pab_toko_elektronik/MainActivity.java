@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         cursor.moveToFirst();
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
-            daftar[i] = cursor.getString(0);
+            daftar[i] = cursor.getString(1);
         }
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case 2:
                                 SQLiteDatabase db = dataHelper.getWritableDatabase();
-                                db.execSQL("DELETE FROM barang WHERE namaBarang = '" + selection + "'");
+                                db.execSQL("DELETE FROM barang WHERE idBarang = '" + selection + "'");
                                 Toast.makeText(MainActivity.this, "Data Berhasil Dihapus", Toast.LENGTH_SHORT).show();
                                 RefreshList();
                                 break;

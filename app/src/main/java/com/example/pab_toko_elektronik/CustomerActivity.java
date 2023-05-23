@@ -27,7 +27,6 @@ import java.util.List;
 public class CustomerActivity extends AppCompatActivity {
     String[] daftar;
     ListView listView;
-    Menu menu;
     protected Cursor cursor;
     DataHelper dataHelper;
     public static CustomerActivity ca;
