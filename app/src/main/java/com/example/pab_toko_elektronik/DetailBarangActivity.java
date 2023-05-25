@@ -7,14 +7,17 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetailBarangActivity extends AppCompatActivity {
     protected Cursor cursor;
     DataHelper dataHelper;
+    String[] daftar;
     TextView namabarang, kodebarang, stockbarang, hargabarang;
     ImageView btnback;
+    Button btnbeli;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,17 @@ public class DetailBarangActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent pindah = new Intent(DetailBarangActivity.this, CustomerActivity.class);
+                startActivity(pindah);
+            }
+        });
+
+        btnbeli = findViewById(R.id.btnbeli);
+        btnbeli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pindah = new Intent(DetailBarangActivity.this, BeliActivity.class);
+                pindah.putExtra("namabarang", namabarang.getText().toString());
+                pindah.putExtra("hargabarang", hargabarang.getText().toString());
                 startActivity(pindah);
             }
         });

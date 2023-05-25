@@ -58,7 +58,7 @@ public class CustomerActivity extends AppCompatActivity {
         cursor.moveToFirst();
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
-            daftar[i] = cursor.getString(0);
+            daftar[i] = cursor.getString(1);
         }
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
@@ -74,7 +74,7 @@ public class CustomerActivity extends AppCompatActivity {
 
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int item) {
+                    public void onClick(DialogInterface dialog, int item) {
                         switch (item) {
                             case 0:
                                 Intent detail = new Intent(getApplicationContext(), DetailBarangActivity.class);
