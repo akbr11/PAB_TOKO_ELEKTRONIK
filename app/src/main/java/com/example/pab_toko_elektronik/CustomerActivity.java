@@ -81,23 +81,26 @@ public class CustomerActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
                 final String selection = daftar[arg2];
-                final CharSequence[] dialogItem = {"Lihat Barang"};
-                AlertDialog.Builder builder = new AlertDialog.Builder(CustomerActivity.this);
-                builder.setTitle("Pilihan");
+                Intent detail = new Intent(getApplicationContext(), DetailBarangActivity.class);
+                detail.putExtra("namabarang", selection);
+                startActivity(detail);
+//                final CharSequence[] dialogItem = {"Lihat Barang"};
+//                AlertDialog.Builder builder = new AlertDialog.Builder(CustomerActivity.this);
+//                builder.setTitle("Pilihan");
 
-                builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int item) {
-                        switch (item) {
-                            case 0:
-                                Intent detail = new Intent(getApplicationContext(), DetailBarangActivity.class);
-                                detail.putExtra("namabarang", selection);
-                                startActivity(detail);
-                                break;
-                        }
-                    }
-                });
-                builder.create().show();
+//                builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int item) {
+//                        switch (item) {
+//                            case 0:
+//                                Intent detail = new Intent(getApplicationContext(), DetailBarangActivity.class);
+//                                detail.putExtra("namabarang", selection);
+//                                startActivity(detail);
+//                                break;
+//                        }
+//                    }
+//                });
+//                builder.create().show();
             }
         });
         ((ArrayAdapter) listView.getAdapter()).notifyDataSetInvalidated();

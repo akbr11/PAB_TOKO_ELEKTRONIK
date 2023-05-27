@@ -47,7 +47,7 @@ public class BeliActivity extends AppCompatActivity {
                     totalHarga.setText(Integer.toString(total));
                 }
                 else {
-                    Toast toast = Toast.makeText(BeliActivity.this, "Mohon masukkan Angka pertama & Kedua", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(BeliActivity.this, "Mohon masukkan jumlah pembelian", Toast.LENGTH_LONG);
                     toast.show();
                 }
             }
@@ -58,12 +58,15 @@ public class BeliActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SQLiteDatabase db = dataHelper.getWritableDatabase();
+                db.execSQL("UPDATE barang SET stokBarang = stokBarang - '" +
+                        jumlahBarang.getText().toString() + "' WHERE namaBarang = '" +
+                        namaBarang.getText().toString() + "'");
                 db.execSQL("INSERT INTO pembelian(namaPembeli, namaBarang, jumlahBeli, totalHarga) values('" +
                         namaPembeli.getText().toString() + "', '" +
                         namaBarang.getText().toString() + "', '" +
                         jumlahBarang.getText().toString() + "', '" +
                         totalHarga.getText().toString() + "')");
-                Toast.makeText(BeliActivity.this, "Barang berhasil dibeli! lihat barangmu di beranda.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BeliActivity.this, "Barang berhasil dibeli! lihat detail pembelianmu di beranda.", Toast.LENGTH_SHORT).show();
                 Intent customer = new Intent(BeliActivity.this, CustomerActivity.class);
                 startActivity(customer);
             }

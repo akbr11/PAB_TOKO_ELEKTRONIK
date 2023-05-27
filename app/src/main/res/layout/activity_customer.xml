@@ -87,7 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="10dp"
+
                 android:layout_weight="1">
                 <TextView
                     android:textStyle="bold"
@@ -105,9 +105,9 @@
                     android:layout_height="wrap_content"/>
                 <Button
                     android:id="@+id/myBarang"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lihat Barangmu"
+                    android:text="Lihat Pembelianmu"
                     android:backgroundTint="@color/white"
                     android:padding="10dp"/>
             </LinearLayout>
@@ -122,23 +122,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="5dp"
+        android:layout_marginStart="16dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lihat Barang disini .."
+            android:text="Pilih Barang-Barangnya dibawah .."
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textColor="@color/black"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
         <ListView
             android:id="@+id/listView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true">
         </ListView>
