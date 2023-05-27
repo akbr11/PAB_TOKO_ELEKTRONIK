@@ -42,10 +42,10 @@ public class DetailActivity extends AppCompatActivity {
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
             cursor.moveToPosition(0);
-            namabarang.setText(cursor.getString(1));
-            kodebarang.setText(cursor.getString(2));
-            stockbarang.setText(cursor.getString(3));
-            hargabarang.setText(cursor.getString(4));
+            namabarang.setText(cursor.getString(0));
+            kodebarang.setText(cursor.getString(1));
+            stockbarang.setText(cursor.getString(2));
+            hargabarang.setText(cursor.getString(3));
         }
     }
 }

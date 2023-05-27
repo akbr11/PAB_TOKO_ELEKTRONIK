@@ -41,10 +41,6 @@ public class BeliActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if((priceSell.getText().length()>0) && (jumlahBarang.getText().length()>0))
                 {
-//                    double angka1 = Double.parseDouble(priceSell.getText().toString());
-//                    double angka2 = Double.parseDouble(jumlahBarang.getText().toString());
-//                    double result = angka1 * angka2;
-//                    totalHarga.setText(Double.toString(result));
                     int price = Integer.parseInt(priceSell.getText().toString());
                     int totalBarang = Integer.parseInt(jumlahBarang.getText().toString());
                     int total = price * totalBarang;
@@ -62,10 +58,11 @@ public class BeliActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SQLiteDatabase db = dataHelper.getWritableDatabase();
-                db.execSQL("INSERT INTO pembelian(namaPembeli, namaBarang, jumlahBeli) values('" +
+                db.execSQL("INSERT INTO pembelian(namaPembeli, namaBarang, jumlahBeli, totalHarga) values('" +
                         namaPembeli.getText().toString() + "', '" +
                         namaBarang.getText().toString() + "', '" +
-                        jumlahBarang.getText().toString() + "')");
+                        jumlahBarang.getText().toString() + "', '" +
+                        totalHarga.getText().toString() + "')");
                 Toast.makeText(BeliActivity.this, "Barang berhasil dibeli! lihat barangmu di beranda.", Toast.LENGTH_SHORT).show();
                 Intent customer = new Intent(BeliActivity.this, CustomerActivity.class);
                 startActivity(customer);

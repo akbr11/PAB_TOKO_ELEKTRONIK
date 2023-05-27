@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,6 +30,7 @@ public class CustomerActivity extends AppCompatActivity {
     ListView listView;
     protected Cursor cursor;
     DataHelper dataHelper;
+    Button myBarang;
     public static CustomerActivity ca;
 
     @Override
@@ -39,6 +41,17 @@ public class CustomerActivity extends AppCompatActivity {
         ca = this;
         dataHelper = new DataHelper(this);
         RefreshList();
+
+        myBarang = findViewById(R.id.myBarang);
+        myBarang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent show = new Intent(CustomerActivity.this, BarangActivity.class);
+                startActivity(show);
+//                Log.d("DEBUG_ON", "OK");
+            }
+
+        });
 
         ImageView btnlogout = findViewById(R.id.logout);
         btnlogout.setOnClickListener(new View.OnClickListener() {
